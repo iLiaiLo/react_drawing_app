@@ -1,13 +1,142 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+}
+body{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  background-image:linear-gradient(45deg,white,lightblue,dodgerblue);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin:0;
+  padding: 0;
+}
+.container{
+  background-color:rgba(243, 252, 255, 0.319);
+}
+.header{
+  font-size:30px;
+  background:linear-gradient(to right,darkblue,dodgerblue,lightblue,aliceblue,blue);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.Canva{
+  background-color: white;
+  border: none;
+  cursor: crosshair;
+
+}
+.Brush,.Eraser,.clearCanva{
+  background-color: dodgerblue;
+  color:aliceblue;
+  cursor: pointer;
+  border:none;
+  height:50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:0.5s;
+  border-radius: 20px;
+}
+:is(.Brush,.Eraser,.clearCanva):hover{
+  box-shadow: 0 0 3px darkblue inset;
+  text-decoration: underline;
+  transition: 0.5s;
+
+}
+.Active{
+  background-color: rgba(90, 152, 214, 0.577);
+  color:aliceblue;
+  cursor: pointer;
+  border:none;
+  height:50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.toolContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.brushTools{
+  display: flex;
+  align-items: center;
+  background-color:dodgerblue;
+  color:aliceblue;
+  height: 50px;
+  border-radius: 20px;
+}
+.brushTools input{
+  cursor: pointer;
+}
+.tools{
+  display: flex;
+  gap:10px;
+  align-items: center;
+  height: 50px;
+}
+.brushTools>div:first-child{
+  display: flex;
+  gap:5px;
+}
+.brushTools>div:last-child{
+  display: flex;
+  gap:5px;
+  margin-left:20px;
+}
+@media screen and (min-width:400px) and (max-width:800px){
+  .toolContainer{
+      flex-direction: column;
+      align-items: center;
+      gap:6px;
+
+  }
+  *{
+      font-size:16px;
+  }
+}
+@media screen and (min-width:350px) and (max-width:400px){
+  *{
+      font-size:14px;
+  }
+  .toolContainer{
+      flex-direction: column;
+      align-items: center;
+      gap:6px;
+
+  }
+    
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media screen and (min-width:0) and (max-width:350px) {
+  *{
+      font-size:14px;
+  }
+  .toolContainer{
+      flex-direction: column;
+      align-items: center;
+      gap:6px;
+
+  }
+  .brushTools{
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+  }
+  .brushTools input{
+      width: 50px;
+  }
+  .brushTools>div:last-child{
+      margin:0
+  }
+  .header{
+      background:linear-gradient(to right,darkblue,dodgerblue);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+  }
 }
+
